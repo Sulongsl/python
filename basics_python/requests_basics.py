@@ -6,3 +6,8 @@
 # python3 requests模块
 
 # @Software: PyCharm
+
+import requests
+
+# HTTP请求：GET、POST、PUT、DELETE、HEAD、OPTIONS
+
