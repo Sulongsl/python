@@ -50,6 +50,8 @@ a = r'ABC\\-001'
 print(a)
 # match()方法判断是否匹配，如果匹配成功，返回一个Match对象，否则返回None
 name = input("What is your name?")
+names = int(name)
+print(type(names))
 if re.match(r'[a-zA-Z]', name):
     print('ok')
 else:
@@ -57,7 +59,7 @@ else:
 
 # 当我们在Python中使用正则表达式时，re模块内部会干两件事情：
 
-# 1.编译正则表达式，如果正则表达式的字符串本身不合法，会报错；
+# 1.编译正则表达式，如果正则表达式的字符串本身不合法，会报错R；
 
 # 2.用编译后的正则表达式去匹配字符串。
 
