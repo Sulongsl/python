@@ -4,13 +4,18 @@
 # @File    : subprocess_basics.py
 
 # http://www.jb51.net/article/133941.htm
+# https://blog.csdn.net/songfreeman/article/details/50735045
+# https://www.cnblogs.com/breezey/p/6673901.html
 
 # @Software: PyCharm
 
 import subprocess
 # print(help(subprocess))
+'''
 # 创建一个新的进程让其执行另外的程序，并与它进行通信，获取标准的输入、标准输出、标准错误以及返回码等
 # 创建附加进程
+subprocess通过子进程来执行外部指令，并通过input/output/error管道，获取子进程的执行的返回信息
+'''
 
 # 1.call
 # 执行命令 返回状态吗  shell = True  允许shell 命令式是字符串形式
@@ -62,7 +67,7 @@ print(ls_value)
 # 返回结果为byte类型
 print(ls_value[0])
 
-# 4.2 与进程双向通信
+# 4.2 与进程双向通信 双进程
 int_va = subprocess.Popen('cat',shell=True,stdin=subprocess.PIPE,stdout=subprocess.PIPE)
 hello_world = 'hello world'.encode('utf-8')
 #  写入到管道
@@ -76,3 +81,5 @@ out_value,err_value = procs.communicate()
 # Popen.communicate()方法用于和子进程交互：发送数据到stdin，并从stdout和stderr读数据，直到收到EOF。等待子进程结束。
 print(out_value)
 print(err_value)
+
+
