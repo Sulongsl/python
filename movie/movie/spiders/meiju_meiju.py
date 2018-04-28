@@ -2,7 +2,6 @@
 import scrapy
 from movie.items import MovieItem
 
-
 class MeijuSpider(scrapy.Spider):
     name = 'meiju'
     allowed_domains = ['meijutt.com']

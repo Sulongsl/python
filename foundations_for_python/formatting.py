@@ -17,7 +17,7 @@ print ("整数用 %d。","His name is %s,age is %d"%("Aviad",88.54))
 print ("浮点数用 %f。","His name is %s,age is %d,money have %f"%("Aviad",99.999,88.54))
 
 # 4.打印浮点数（指定保留小数点位数）
-print ("浮点数指定保留小数点位数 %.nf。","His height is %.4f m"%(1.83))
+print ("浮点数指定保留小数点位数 %.nf.","His height is %.4f m"%(1.83))
 
 # 5.指定占位符宽度
 print ("指定占位符宽度用 %ns/d/f 。","Name:%10s Age:%8d Height:%8.2f"%("Aviad",25,1.83))

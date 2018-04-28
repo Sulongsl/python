@@ -48,3 +48,7 @@ for a in range(1,5):
 				d.append([a,b,c])
 print("总数量=" +str(len(d)))
 print(d)
+
+# def insertion2(L):
+# 	for i in range(0,len(L)):
+# 		for x in range()

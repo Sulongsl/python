@@ -15,15 +15,23 @@ def log(func):
 	def wrapper(*args, **kw):
 		print('传入函数为: %s' % func.__name__)
 		return func(*args, **kw)
-
-	return wrapper()
-
+	return wrapper
 
 # *args 传入可变任意参数 tuple
 # **kw  传入 关键字参数  dict
+#
+# def jump():
+# 	print('我正在蹦跶')
 
+def rainbow(main):   # 传入一个函数作为参数 ra(main())
+	def make_rainbow(*args,**kwargs):
+		print('你被挂上了彩虹：%s'%(main.__name__))
+		return main(*args,**kwargs)
+	return make_rainbow
 
-
+@rainbow
+def jump():
+	print('我正在蹦跶')
 
 # now
 
@@ -64,34 +72,43 @@ def create():
 	print('sr')
 	yield 3
 
+# 使用 yield 书写一个斐波那契 函数
+#1.常规版本
+def fab(max):
+	n,a,b = 0,0,1
+	while n <max:
+		print(b)
+		a,b,=b,a+b
+		n =n+1
 
+from inspect import isgeneratorfunction
 
 if __name__ == '__main__':
+	print(isgeneratorfunction(fab))
 	# 用于任何函数上，并打印该函数的执行时间：
-
-	@log_time
-	def bbb():
-		print('begin')
-		time.sleep(3)
-		print('end')
-
-# 装饰器
-	@log
-	def now():
-		print('2018.04.23 Even Liu going')
-	# 迭代器
-	print(a.__iter__())
-	print(a.__next__())
-	print(a.__next__())
-	print(a.__next__())
-	print(a.__next__())
-	print(a.__next__())
-	print(a.__next__())
-	print(a.__next__())
-
-	# 生成器
-	ret = create()
-	# print(ret)     <generator object create at 0x101925ca8>
-	print(ret.__next__())
-	print(ret.__next__())
-	ret.close()
+# 	@log_time
+# 	def bbb():
+# 		print('begin')
+# 		time.sleep(3)
+# 		print('end')
+#
+# # 装饰器
+# 	@log
+# 	def now():
+# 		print('2018.04.23 Even Liu going')
+# 	# 迭代器
+# 	print(a.__iter__())
+# 	print(a.__next__())
+# 	print(a.__next__())
+# 	print(a.__next__())
+# 	print(a.__next__())
+# 	print(a.__next__())
+# 	print(a.__next__())
+# 	print(a.__next__())
+#
+# 	# 生成器
+# 	ret = create()
+# 	# print(ret)     <generator object create at 0x101925ca8>
+# 	print(ret.__next__())
+# 	print(ret.__next__())
+# 	ret.close()
