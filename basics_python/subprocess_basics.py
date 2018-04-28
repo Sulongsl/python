@@ -12,6 +12,7 @@
 import subprocess
 # print(help(subprocess))
 '''
+进程
 # 创建一个新的进程让其执行另外的程序，并与它进行通信，获取标准的输入、标准输出、标准错误以及返回码等
 # 创建附加进程
 subprocess通过子进程来执行外部指令，并通过input/output/error管道，获取子进程的执行的返回信息

@@ -71,7 +71,7 @@ print(date2018.ctime())
 
 # 5.1 时间的字符串输出
 # 定义时间
-time_now = datetime.time(12,59,59,899)
+time_now = datetime.time(12,59,59,8939)
 print(time_now.__str__())
 
 print("***********************************************")
