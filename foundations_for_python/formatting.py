@@ -3,7 +3,8 @@
 # @Author  : Sulong
 # @File    : formatting.py
 
-# Python格式化输出
+
+'''Python格式化输出'''
 
 # @Software: PyCharm
 

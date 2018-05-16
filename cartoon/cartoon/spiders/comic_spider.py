@@ -23,7 +23,7 @@ class ComicSpider(scrapy.Spider):
 	def start_requests(self):
 		yield scrapy.Request(url=self.start_urls[0], callback=self.parse1)
 
-	'''解析response,获取张杰图片链接地址'''
+	'''解析response,获取章节图片链接地址'''
 
 	def parse1(self, response):
 		hxs = Selector(response)
@@ -45,7 +45,7 @@ class ComicSpider(scrapy.Spider):
 		item = response.meta['item']  # 接受传递的item参数
 		item['link_url'] = response.url  # 获取章节的第一页链接
 		hxs = Selector(response)
-		pre_img_url = hxs.xpath('//script/text()').extract()  # 获取章节第一页的图片链接
+		pre_img_url = hxs.xpath     ('//script/text()').extract()  # 获取章节第一页的图片链接
 		img_url = [self.server_img + re.findall(self.pattern_img, pre_img_url[0])[0]]  # 这里返回的图片地址 应为列表
 		item['img_url'] = img_url  # 将获取的章节第一页的图片链接保存至img_url中
 		yield item  # 返回item 交给下载器下载图片
